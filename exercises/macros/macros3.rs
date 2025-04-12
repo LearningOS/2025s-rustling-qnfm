@@ -1,20 +1,19 @@
-// macros3.rs
+// macros4.rs
 //
-// Make me compile, without taking the macro out of the module!
-//
-// Execute `rustlings hint macros3` or use the `hint` watch subcommand for a
+// Execute `rustlings hint macros4` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
-mod macros {
-    macro_rules! my_macro {
-        () => {
-            println!("Check out my macro!");
-        };
+#[rustfmt::skip]
+macro_rules! my_macro {
+    () => {
+        println!("Check out my macro!");
+    };
+    ($val:expr) => {
+        println!("Look at this other macro: {}", $val);
     }
 }
 
 fn main() {
     my_macro!();
+    my_macro!(7777);
 }
